@@ -2,4 +2,9 @@
 	<li><%= @movie.description %></li>
 	<li><%= @movie.rating %></li>
 	<li><%= @movie.released_on %></li>
-	<li><%= number_to_currency(@movie.total_gross) %></li>
+<!-- 	<li><%= number_to_currency(@movie.total_gross) %></li> -->
+
+	<li><%= format_total_gross(@movie) %></li>
+
+<%= link_to "All Movies", movies_path %>
+
