@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-describe "Creating a new movie" do 
+describe "Creating a new movie" do
+ 
 	it "saves the movie and shows the new movie's details" do 
 		visit movies_url
 
@@ -12,6 +13,12 @@ describe "Creating a new movie" do
 		fill_in "Description", with: "Superheroes saving the world from villians"
 		fill_in "Rating", with: "PG-13"
 		fill_in "Total gross", with: "7500000"
+
+		fill_in "Cast", with: "The award-winning cast"
+		fill_in "Director", with: "The ever-creative director"
+		fill_in "Duration", with: "123 min"
+		fill_in "Image file name", with: "movie.png"
+
 		select (Time.now.year - 1).to_s, :from => "movie_released_on_1i"
 
 		click_button "Create Movie"
