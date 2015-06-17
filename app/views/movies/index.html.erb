@@ -1,23 +1,9 @@
-<!-- <h1><%= pluralize(@movies.size, 'Movie') %></h1>
-
-<ul>
-	<% @movies.each do |movie| %>
-		<li><%= movie.title %></li>
-		<li><%= movie.rating %></li>
-		<li><%= movie.description %></li>
-		<li><%= movie.released_on %></li>
-		<li><%= "$318,412,101.00" %></li>
-	<% end %>
-</ul> -->
-
-<!-- Optional - HTML Structure -->
-
 <h1><%= pluralize(@movies.size, 'Movie') %></h1>
 
 <%= link_to "Add New Movie", new_movie_path %>
 
 <% @movies.each do |movie| %>
-  <article>
+  <article class="movie">
     <header>
       <h2><%= link_to movie.title, movie_path(movie) %></h2>
       <%= image_for(movie) %>
