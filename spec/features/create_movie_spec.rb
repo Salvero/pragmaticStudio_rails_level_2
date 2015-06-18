@@ -11,7 +11,6 @@ describe "Creating a new movie" do
 
 		fill_in "Title", with: "New Movie Title"
 		fill_in "Description", with: "Superheroes saving the world from villians"
-		fill_in "Rating", with: "PG-13"
 		fill_in "Total gross", with: "7500000"
 
 		fill_in "Cast", with: "The award-winning cast"
@@ -19,6 +18,7 @@ describe "Creating a new movie" do
 		fill_in "Duration", with: "123 min"
 		fill_in "Image file name", with: "movie.png"
 
+		select "PG-13", :from => "movie_rating"
 		select (Time.now.year - 1).to_s, :from => "movie_released_on_1i"
 
 		click_button "Create Movie"
