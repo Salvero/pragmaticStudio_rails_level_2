@@ -11,6 +11,8 @@ class Movie < ActiveRecord::Base
 		message: "must reference a GIF, JPG, or PNG image"		
 	}
 
+	has_many :reviews, dependent: :destroy
+
 	RATINGS = %w(G PG PG-13 R NC-17)
 	validates :rating, inclusion: { in: RATINGS }
 
