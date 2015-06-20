@@ -60,3 +60,4 @@ Movie.create!([
     duration: "101 min",
   }
 ])
+

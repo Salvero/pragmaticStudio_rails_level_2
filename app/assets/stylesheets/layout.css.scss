@@ -1,11 +1,14 @@
 @import "colors";
 
 header#page-header {
-	color: $secondary-color;
 	background: $primary-color;
 	padding: 5px;
 	text-align: center;
 	border-bottom: 15px solid darken($primary-color, 10%);
+	a {
+		text-decoration: none;
+		color: $secondary-color;
+	}
 }
 
 footer#page-footer {
