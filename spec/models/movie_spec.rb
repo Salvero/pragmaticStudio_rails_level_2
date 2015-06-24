@@ -26,7 +26,7 @@ describe "A movie" do
 
 		movie.valid?
 
-		expect(movie.errors[:description].any?)to eq(true)
+		expect(movie.errors[:description].any?).to eq(true)
 	end
 
 	it "requires a released on date" do
