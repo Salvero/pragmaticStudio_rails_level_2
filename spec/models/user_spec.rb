@@ -7,7 +7,7 @@ describe "A user" do
 
 		user.valid? 
 
-		expect(user.errors[:name].any?)to eq(true)
+		expect(user.errors[:name].any?).to eq(true)
 	end
 
 	it "requires an email" do
