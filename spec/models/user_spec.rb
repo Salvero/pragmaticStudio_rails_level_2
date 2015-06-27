@@ -24,7 +24,16 @@ describe "A user" do
 		emails.each do |email|
 			user = User.new(email: email)
 			user.valid?
-			expect(user.errors[:email].any?).to eq(true)
+			expect(user.errors[:email].any?).to eq(false)
+	end
+end
+
+it "rejects improperly formatted email addresses" do
+	emails = %w[@ user@ @example.com]
+	emails.each do |email|
+		user = User.new(email: email)
+		user.valid?
+		expect(user.errors[:email].any?).to eq(true)
 	end
 end
 
