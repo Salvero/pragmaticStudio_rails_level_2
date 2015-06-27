@@ -15,6 +15,10 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+config.generators do |g|
+    g.test_framework false
+end
+
 module Flix
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
