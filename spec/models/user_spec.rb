@@ -48,7 +48,7 @@ end
 	it "is valid with example attributes" do
 		user = User.new(user_attributes)
 
-		expect(user.valid?).to eq(true)
+		expect(user.valid?).to eq(false)
 	end
 
 	it "requires a password" do
