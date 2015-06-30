@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :users
+  resource :users, :session
 	root 'movies#index'
 
 	get 'signup' => 'users#new'
