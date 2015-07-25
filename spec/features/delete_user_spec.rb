@@ -1,6 +1,12 @@
 require "rails_helper"
 
 describe "Deleting a user" do
+
+	before do
+		admin = User.create!(user_attributes(admin: true))
+		sign_in(admin)
+	end
+
 	it "destroys the user and redirects to the home page" do
 		user = User.create!(user_attributes)
 
