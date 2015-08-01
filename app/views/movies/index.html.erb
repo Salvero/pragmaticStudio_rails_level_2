@@ -28,10 +28,6 @@
         <th>Duration:</th>
         <td><%= movie.duration %></td>
       </tr>
-      <tr>
-        <th>Reviews:</th>
-        <td><%= link_to pluralize(movie.reviews.size, "Reviews"), movie_reviews_path(movie) %></td>
-      </tr>  
     </table>
   </article>
 <% end %>

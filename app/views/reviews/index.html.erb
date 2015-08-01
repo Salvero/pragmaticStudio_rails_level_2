@@ -4,11 +4,15 @@
 
 <ol id="reviews">
 	<% @reviews.each do |review| %>
+		<li>	
+			<%= profile_image_for(review.user, size: 25) %>
 			<span class="review"><%= pluralize(review.stars, 'star') %></span>
-			<span class="user">by <%= review.name %></span>
-			<span class="date"><%= time_ago_in_words(review.created_at) %> ago
+			<span class="user">
+				<%= link_to review.user.name, review.user %>
+			<span class="date"><%= time_ago_in_words(review.created_at) %> ago</span>
 			<p>
 				&quot;<%= review.comment %>&quot;
-			</p>			
+			</p>
+		</li>			
 	<% end %>
 </ol> 
