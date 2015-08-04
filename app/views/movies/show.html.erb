@@ -10,6 +10,9 @@
 </p>
 <% if @fans.any? %>
 <h3>Fans' Favorites</h3>
+<% if current_user %>
+	<%= button_to "Fave", movie_favorites_path(@movie) %>
+<% end %>
 <p>
 	<%= pluralize(@fans.size, 'fan') %>
 </p>	
