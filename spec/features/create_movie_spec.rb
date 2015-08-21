@@ -5,6 +5,17 @@ describe "Creating a new movie" do
 	before do
 		admin = User.create!(user_attributes(admin: true))
 		sign_in(admin)
+
+		@genre1 = Genre.create!(name: "Genre 1")
+		@genre2 = Genre.create!(name: "Genre 2")
+		@genre3 = Genre.create!(name: "Genre 3")
+
+		check(@genre1.name)
+		check(@genre2.name)
+
+		expect(page).to have_text(@genre1.name)
+		expect(page).to have_text(@genre2.name)
+		expect(page).not_to have_text(@genre3.name)
 	end
  
 	it "saves the movie and shows the new movie's details" do 
