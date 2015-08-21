@@ -12,6 +12,9 @@
 			<%= f.text_area :description, cols: 40, rows: 8 %>
 		</p>
 		<p>
+			<%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name) %>
+		</p>
+		<p>
 			<%= f.label :rating %><br/>
 			<%= f.select :rating, Movie::RATINGS, prompt: "Pick one" %>
 		</p>
