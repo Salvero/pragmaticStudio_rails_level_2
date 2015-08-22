@@ -14,14 +14,16 @@
 		<li><%= genre.name %></li>
 	<% end %>
 </ul>
-<% if @fans.any? %>
-<h3>Fans' Favorites</h3>
-<% if current_user %>
-	<% if @current_favorite %>
-		<%= button_to "Unfave", movie_favorite_path(@movie, @current_favorite), method: :delete, class: "button unfave" %>
-	<% else %>
-		<%= button_to "Fave", movie_favorites_path(@movie), class: "button fave" %>
-	<% end %>	
+<% content_for :side do %>
+	<% if @fans.any? %>
+	<h3>Fans' Favorites</h3>
+	<% if current_user %>
+		<% if @current_favorite %>
+			<%= button_to "Unfave", movie_favorite_path(@movie, @current_favorite), method: :delete, class: "button unfave" %>
+		<% else %>
+			<%= button_to "Fave", movie_favorites_path(@movie), class: "button fave" %>
+		<% end %>	
+	<% end %>
 <% end %>
 <p>
 	<%= pluralize(@fans.size, 'fan') %>
