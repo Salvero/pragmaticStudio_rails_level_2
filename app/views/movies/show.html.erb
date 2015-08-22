@@ -1,4 +1,4 @@
-<% content_for(:title, @movie.title) %>
+<% title("#{@movie.title} (#{@movie.released_on.year})") %>
 
 <h2>Title: <%= @movie.title %> </h2>
 
