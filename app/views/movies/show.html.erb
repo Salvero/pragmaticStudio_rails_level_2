@@ -1,3 +1,5 @@
+<% content_for(:title, @movie.title) %>
+
 <h2>Title: <%= @movie.title %> </h2>
 
 <h3>Description</h3>
@@ -15,8 +17,7 @@
 			<li><%= genre.name %></li>
 		<% end %>
 	</ul>
-<% end %>
-<% content_for :side do %>
+
 	<% if @fans.any? %>
 	<h3>Fans' Favorites</h3>
 	<% if current_user %>
@@ -26,6 +27,7 @@
 			<%= button_to "Fave", movie_favorites_path(@movie), class: "button fave" %>
 		<% end %>	
 	<% end %>
+
 <% end %>
 <p>
 	<%= pluralize(@fans.size, 'fan') %>
